@@ -51,6 +51,6 @@ std::ostringstream oss(s)	出力を受け取る専用のストリーム型の変
 cout << std::setw(len)		len分の空きを確保する その次の出力をlenの右端に入れていく
 				今回は10個分の欄でそこにデータを詰めていったのでadjust関数で使用した
 
-var.substr(i, j)		varのindex iからindex jまでを切り取って返却する
+var.substr(i, j)		varのindex iからj分を切り取って返却する
 
 var.empty()			varがstrlen == 0だった場合にtrueを返す
