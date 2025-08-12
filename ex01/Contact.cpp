@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 16:28:57 by mawako            #+#    #+#             */
-/*   Updated: 2025/08/11 18:56:49 by mawako           ###   ########.fr       */
+/*   Updated: 2025/08/12 16:36:51 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,6 @@ const std::string&	Contact::secret() const
 
 bool			Contact::isEmpty() const
 {
-	return _firstName.empty() && _lastName.empty() && _nickName.empty()
-		&& _phone.empty() && _secret.empty();
+	return (_firstName.empty() && _lastName.empty() && _nickName.empty()
+		&& _phone.empty() && _secret.empty());
 }
