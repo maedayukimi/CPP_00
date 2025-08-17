@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 16:28:57 by mawako            #+#    #+#             */
-/*   Updated: 2025/08/17 14:16:11 by mawako           ###   ########.fr       */
+/*   Updated: 2025/08/17 14:41:35 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,67 +16,94 @@ Contact::Contact()
 {
 }
 
-bool	Contact::setFirstName(const std::string& fn)
+static std::string	trim(const std::string& s)
 {
-	if (fn.empty())
+	size_t	start;
+	size_t	end;
+
+	start = s.find_first_not_of(" \t\n\r\f\v");
+	end = s.find_last_not_of(" \t\n\r\f\v");
+	if (start == std::string::npos)
+		return ("");
+	return (s.substr(start, end - start + 1));
+}
+
+bool			Contact::setFirstName(const std::string& fn)
+{
+	std::string	str;
+
+	str = trim(fn);
+	if (str.empty())
 		return (false);
-	_firstName = fn;
+	_firstName = str;
 	return (true);
 }
 
-bool	Contact::setLastName(const std::string& ln)
+bool			Contact::setLastName(const std::string& ln)
 {
-	if (ln.empty())
+	std::string	str;
+
+	str = trim(ln);
+	if (str.empty())
 		return (false);
-	_lastName = ln;
+	_lastName = str;
 	return (true);
 }
 
-bool	Contact::setNickName(const std::string& nn)
+bool			Contact::setNickName(const std::string& nn)
 {
-	if (nn.empty())
+	std::string	str;
+
+	str = trim(nn);
+	if (str.empty())
 		return (false);
-	_nickName = nn;
+	_nickName = str;
 	return (true);
 }
 
-bool	Contact::setPhone(const std::string& ph)
+bool			Contact::setPhone(const std::string& ph)
 {
-	if (ph.empty())
+	std::string	str;
+
+	str = trim(ph);
+	if (str.empty())
 		return (false);
-	_phone = ph;
+	_phone = str;
 	return (true);
 }
 
-bool	Contact::setSecret(const std::string& sec)
+bool			Contact::setSecret(const std::string& sec)
 {
-	if (sec.empty())
+	std::string	str;
+
+	str = trim(sec);
+	if (str.empty())
 		return (false);
-	_secret = sec;
+	_secret = str;
 	return (true);
 }
 
-const std::string&	Contact::firstName() const
+const std::string&	Contact::getFirstName() const
 {
 	return (_firstName);
 }
 
-const std::string&	Contact::lastName() const
+const std::string&	Contact::getLastName() const
 {
 	return (_lastName);
 }
 
-const std::string&	Contact::nickName() const
+const std::string&	Contact::getNickName() const
 {
 	return (_nickName);
 }
 
-const std::string&	Contact::phone() const
+const std::string&	Contact::getPhone() const
 {
 	return (_phone);
 }
 
-const std::string&	Contact::secret() const
+const std::string&	Contact::getSecret() const
 {
 	return (_secret);
 }

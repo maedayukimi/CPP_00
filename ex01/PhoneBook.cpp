@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 16:32:04 by mawako            #+#    #+#             */
-/*   Updated: 2025/08/11 18:24:17 by mawako           ###   ########.fr       */
+/*   Updated: 2025/08/17 14:44:21 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ void		PhoneBook::printTable() const
 		const Contact& c = _data[i];
 
 		std::cout << std::setw(10) << i << "|"
-			<< adjust(c.firstName()) << "|"
-			<< adjust(c.lastName()) << "|"
-			<< adjust(c.nickName()) << std::endl;
+			<< adjust(c.getFirstName()) << "|"
+			<< adjust(c.getLastName()) << "|"
+			<< adjust(c.getNickName()) << std::endl;
 	}
 }

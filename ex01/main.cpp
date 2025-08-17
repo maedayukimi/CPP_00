@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 16:45:00 by mawako            #+#    #+#             */
-/*   Updated: 2025/08/17 14:12:57 by mawako           ###   ########.fr       */
+/*   Updated: 2025/08/17 14:43:46 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,11 +100,11 @@ int	main()
 				std::cout << "Out of range.\n";
 				continue ;
 			}
-			std::cout << "FIrst:  " << pc->firstName() << "\n"
-				  << "Last:   " << pc->lastName() << "\n"
-				  << "Nick:   " << pc->nickName() << "\n"
-				  << "Phone:  " << pc->phone() << "\n"
-				  << "Secret: " << pc->secret() << "\n";
+			std::cout << "FIrst:  " << pc->getFirstName() << "\n"
+				  << "Last:   " << pc->getLastName() << "\n"
+				  << "Nick:   " << pc->getNickName() << "\n"
+				  << "Phone:  " << pc->getPhone() << "\n"
+				  << "Secret: " << pc->getSecret() << "\n";
 		}
 		else if (cmd == "EXIT")
 			break ;
