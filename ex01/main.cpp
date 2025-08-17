@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 16:45:00 by mawako            #+#    #+#             */
-/*   Updated: 2025/08/11 19:19:27 by mawako           ###   ########.fr       */
+/*   Updated: 2025/08/17 14:12:57 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,41 @@ int	main()
 		if (cmd == "ADD")
 		{
 			Contact	c;
+			bool	check;
 
 			std::string fn = ask("First name: ");
 			std::string ln = ask("Last name: ");
 			std::string nn = ask("Nickname: ");
 			std::string ph = ask("Phone: ");
 			std::string sc = ask("Darkest secret: ");
-			c.set(fn, ln, nn, ph, sc);
+			check = true;
+			if (!c.setFirstName(fn))
+			{
+				std::cout << "Input first name." << std::endl;
+				check = false;
+			}
+			if (!c.setLastName(ln))
+			{
+				std::cout << "Input Last name." << std::endl;
+				check = false;
+			}
+			if (!c.setNickName(nn))
+			{
+				std::cout << "Input Nick name." << std::endl;
+				check = false;
+			}
+			if (!c.setPhone(ph))
+			{
+				std::cout << "Input Phone number." << std::endl;
+				check = false;
+			}
+			if (!c.setSecret(sc))
+			{
+				std::cout << "Input Darkest secret." << std::endl;
+				check = false;
+			}
+			if (!check)
+				continue ;
 			pb.add(c);
 			std::cout << "Saved.\n";
 		}

@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 16:28:57 by mawako            #+#    #+#             */
-/*   Updated: 2025/08/12 16:36:51 by mawako           ###   ########.fr       */
+/*   Updated: 2025/08/17 14:16:11 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,44 @@ Contact::Contact()
 {
 }
 
-void	Contact::set(const std::string& fn, const std::string& ln,
-			const std::string& nn, const std::string& ph,
-			const std::string& sec)
+bool	Contact::setFirstName(const std::string& fn)
 {
+	if (fn.empty())
+		return (false);
 	_firstName = fn;
-	_lastName = ln,
+	return (true);
+}
+
+bool	Contact::setLastName(const std::string& ln)
+{
+	if (ln.empty())
+		return (false);
+	_lastName = ln;
+	return (true);
+}
+
+bool	Contact::setNickName(const std::string& nn)
+{
+	if (nn.empty())
+		return (false);
 	_nickName = nn;
+	return (true);
+}
+
+bool	Contact::setPhone(const std::string& ph)
+{
+	if (ph.empty())
+		return (false);
 	_phone = ph;
+	return (true);
+}
+
+bool	Contact::setSecret(const std::string& sec)
+{
+	if (sec.empty())
+		return (false);
 	_secret = sec;
+	return (true);
 }
 
 const std::string&	Contact::firstName() const
@@ -50,10 +79,4 @@ const std::string&	Contact::phone() const
 const std::string&	Contact::secret() const
 {
 	return (_secret);
-}
-
-bool			Contact::isEmpty() const
-{
-	return (_firstName.empty() && _lastName.empty() && _nickName.empty()
-		&& _phone.empty() && _secret.empty());
 }
