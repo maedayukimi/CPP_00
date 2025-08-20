@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 16:28:51 by mawako            #+#    #+#             */
-/*   Updated: 2025/08/11 18:26:12 by mawako           ###   ########.fr       */
+/*   Updated: 2025/08/20 16:25:12 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ class PhoneBook
 		static std::string	adjust(const std::string& s);
 	public:
 		PhoneBook();
-		void		add(const Contact& c);
-		int		size() const;
-		const Contact*	get(int idx) const;
+		void		addPb(const Contact& c);
+		int		getSize() const;
+		const Contact*	getData(int idx) const;
 		void		printTable() const;
 };
 

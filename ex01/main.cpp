@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 16:45:00 by mawako            #+#    #+#             */
-/*   Updated: 2025/08/17 14:43:46 by mawako           ###   ########.fr       */
+/*   Updated: 2025/08/20 16:26:41 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,22 +71,23 @@ int	main()
 			}
 			if (!check)
 				continue ;
-			pb.add(c);
+			pb.addPb(c);
 			std::cout << "Saved.\n";
 		}
 		else if (cmd == "SEARCH")
 		{
 			int		idx;
 			const Contact	*pc;
+			std::string	s;
 
-			if (pb.size() == 0)
+			if (pb.getSize() == 0)
 			{
 				std::cout << "Empty.\n";
 				continue ;
 			}
 			pb.printTable();
 			std::cout << "Index? ";
-			std::string s; std::getline(std::cin, s);
+			std::getline(std::cin, s);
 			std::stringstream ss(s);
 			idx = -1;
 			if (!(ss >> idx) || !ss.eof())
@@ -94,7 +95,7 @@ int	main()
 				std::cout << "Invalid index.\n";
 				continue ;
 			}
-			pc = pb.get(idx);
+			pc = pb.getData(idx);
 			if (!pc)
 			{
 				std::cout << "Out of range.\n";

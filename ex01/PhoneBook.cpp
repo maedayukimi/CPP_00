@@ -6,7 +6,7 @@
 /*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 16:32:04 by mawako            #+#    #+#             */
-/*   Updated: 2025/08/17 14:44:21 by mawako           ###   ########.fr       */
+/*   Updated: 2025/08/20 16:25:21 by mawako           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ PhoneBook::PhoneBook() : _size(0), _next(0)
 {
 }
 
-void		PhoneBook::add(const Contact& c)
+void		PhoneBook::addPb(const Contact& c)
 {
 	_data[_next] = c;
 	_next = (_next + 1) % 8;
@@ -27,12 +27,12 @@ void		PhoneBook::add(const Contact& c)
 		_size++;
 }
 
-int		PhoneBook::size() const
+int		PhoneBook::getSize() const
 {
 	return (_size);
 }
 
-const Contact*	PhoneBook::get(int idx) const
+const Contact*	PhoneBook::getData(int idx) const
 {
 	if (idx < 0 || idx >= _size)
 		return (0);
